@@ -1,7 +1,11 @@
+/**
+ * records
+ * toList() on streams
+ */
 public class Java16 {
     public static void main(String[] args) {
         TimelineEvent e = new TimelineEvent("Christopher et Nicolas",
-                "group",
+                "groupe",
                 "2022/10/jug-title.png");
         String HOST = "https://lemansjug.files.wordpress.com/";
         TimelineEventDto dto = new TimelineEventDto("New " + e.eventType,
@@ -25,4 +29,7 @@ class TimelineEvent {
 record TimelineEventDto(String mainText, String secondaryText, String imageUrl) {
 //immutable data classes. Generates constructor, equals + hashCode + toString methods, as well as getters.
 //fields are private and final. Constructor implementation can be customised.
+    public String getMainText() {
+        return this.mainText();
+    }
 }

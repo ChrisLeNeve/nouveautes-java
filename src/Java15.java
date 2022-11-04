@@ -1,5 +1,9 @@
 import java.util.List;
 
+/**
+ * text blocks
+ * clearer NPEs
+ */
 public class Java15 {
     public static void main(String[] args) {
         textBlocks();

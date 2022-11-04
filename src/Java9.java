@@ -19,12 +19,16 @@ public class Java9 {
     }
 
     static void fabriqueCollectionsImmuables() {
+        // Immuables uniquement ! Si vous y ajoutez des éléments, votre code crashera.
+        List<String> listeImmuableAvantJava9 = Arrays.asList("foo", "bar");
+        //après Java 9
         List<String> motsClé = List.of("Le Mans", "JUG");
-        Set<String> adjectifs = Set.of("Fantastique", "Éducation");
-        adjectifs.add("sdf");// crash - retourne un objet immuable
+        Set<String> adjectifs = Set.of("Fantastique", "Éducatif");
         //pas de fabrique pour les Queues !
         // Jusqu'à 10
-        Map<String, String> organisateurs = Map.of("Chris", "Neve", "Nicolas", "Dugué", "Pourquoi pas", "toi ?");
+        Map<String, String> organisateurs = Map.of("Chris", "Neve",
+                "Nicolas", "Dugué",
+                "Pourquoi pas", "toi ?");
         //au delà
         Map<String, String> invités = Map.ofEntries(
                 Map.entry("Université", "Tous les étudiants"),
@@ -74,8 +78,20 @@ interface Timeline {
     }
 }
 
-class CustomTimeline implements Timeline {
+class EnglishTimeline implements Timeline {
 
+    @Override
+    public void getTimeline() {
+        //business code
+    }
+    @Override
+    public String getLabel() {
+        return "We have new things going on every day";
+    }
+
+}
+
+class FrenchTimeline implements Timeline {
     @Override
     public void getTimeline() {
         //business code
