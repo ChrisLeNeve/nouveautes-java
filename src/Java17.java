@@ -13,7 +13,6 @@ public class Java17 {
     }
 }
 
-
 class CustomHashSet<T> extends HashSet<T> {
     private int count = 0;
     @Override
@@ -39,6 +38,7 @@ final class Christopher extends Admin implements AdminOps {
 final class Nicolas extends Admin implements AdminOps {
 
 }
+
 non-sealed class Toto extends Admin {
 
 }
